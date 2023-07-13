@@ -1,23 +1,31 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import React from 'react';
 
-export default function Home() {
+const apis = [
+  {
+    name: 'API 1',
+    url: 'https://api.example.com/api1',
+  },
+  {
+    name: 'API 2',
+    url: 'https://api.example.com/api2',
+  },
+  // Agrega más objetos de API según sea necesario
+];
+
+const JApis = () => {
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <Footer />
+    <div>
+      <h1>JApis - Conjunto de APIs</h1>
+      <ul>
+        {apis.map(api => (
+          <li key={api.name}>
+            <a href={api.url}>{api.name}</a>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
+
+export default JApis;
+  
